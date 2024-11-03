@@ -28,14 +28,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Part 2: Define an Enum for Products
 enum Product {
   dart,
   flutter,
   firebase,
 }
 
-// Part 2: Extension to hold product information
 extension ProductInfo on Product {
   String get title {
     switch (this) {
@@ -71,7 +69,6 @@ extension ProductInfo on Product {
   }
 }
 
-// Part 3: ProductCard Widget
 class ProductCard extends StatelessWidget {
   final Product product;
 
