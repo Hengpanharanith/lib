@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'gradiant_widget.dart';
 void main() {
   runApp(MyApp());
 }
@@ -9,18 +9,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Testing Gradiant Color in the box '),
-        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              MyButton(
-                  "Nith", const Color.fromARGB(255, 248, 3, 3), Colors.white),
-              MyButton("Panha", Colors.blue, Colors.red),
-              MyButton("Heng", Colors.green, Colors.yellow),
-            ],
+             MyButton(23, 'Nith',Color(#F4C2C2), Color(#FFC1CC),Color(), textColor, end)
+            ],  
           ),
         ),
       ),
@@ -29,11 +23,16 @@ class MyApp extends StatelessWidget {
 }
 
 class MyButton extends StatelessWidget {
-  const MyButton(this.label, this.start, this.end, {super.key});
+  const MyButton(
+      this.fontsize, this.label, this.start, this.mid, this.textColor, this.end,
+      {super.key});
 
   final String label;
   final Color start;
   final Color end;
+  final Color mid;
+  final Color textColor;
+  final double fontsize;
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +41,13 @@ class MyButton extends StatelessWidget {
       margin: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [start, end],
+          colors: [start, mid, end],
         ),
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Text(
         label,
-        style: TextStyle(color: Colors.white, fontSize: 24),
+        style: TextStyle(color: textColor, fontSize: fontsize),
       ),
     );
   }
