@@ -34,9 +34,13 @@ enum Product {
   firebase,
 }
 
-extension ProductInfo on Product {
-  String get title {
-    switch (this) {
+class ProductCard extends StatelessWidget {
+  final Product product;
+
+  ProductCard({required this.product});
+
+  String getProductTitle(Product product) {
+    switch (product) {
       case Product.dart:
         return "Dart";
       case Product.flutter:
@@ -46,8 +50,8 @@ extension ProductInfo on Product {
     }
   }
 
-  String get description {
-    switch (this) {
+  String getProductDescription(Product product) {
+    switch (product) {
       case Product.dart:
         return "The best object language";
       case Product.flutter:
@@ -57,8 +61,8 @@ extension ProductInfo on Product {
     }
   }
 
-  String get imageAsset {
-    switch (this) {
+  String getProductImageAsset(Product product) {
+    switch (product) {
       case Product.dart:
         return 'assets/dart.png';
       case Product.flutter:
@@ -67,12 +71,6 @@ extension ProductInfo on Product {
         return 'assets/firebase.png';
     }
   }
-}
-
-class ProductCard extends StatelessWidget {
-  final Product product;
-
-  ProductCard({required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -88,13 +86,13 @@ class ProductCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              product.imageAsset,
+              getProductImageAsset(product),
               height: 50,
               width: 50,
             ),
             SizedBox(height: 10),
             Text(
-              product.title,
+              getProductTitle(product),
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -102,7 +100,7 @@ class ProductCard extends StatelessWidget {
             ),
             SizedBox(height: 5),
             Text(
-              product.description,
+              getProductDescription(product),
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey[700],
