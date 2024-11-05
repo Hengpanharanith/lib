@@ -1,40 +1,32 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("My Hobbies"),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment:
-                CrossAxisAlignment.stretch, // Stretch to full width
-            children: [
-              HobbyCard(
-                title: "Travelling",
-                icon: Icons.flight_takeoff,
-                color: Colors.green,
-              ),
-              HobbyCard(
-                title: "Skating",
-                icon: Icons.directions_walk,
-                color: Colors.blueGrey,
-              ),
-              // Add more HobbyCard widgets as needed
-            ],
-          ),
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text("My Hobbies"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(100.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            HobbyCard(
+              title: "Travelling",
+              icon: Icons.flight_takeoff,
+              color: Colors.green,
+            ),
+            HobbyCard(
+              title: "Skating",
+              icon: Icons.directions_walk,
+              color: Colors.blueGrey,
+            ),
+            // Add more HobbyCard widgets as needed
+          ],
         ),
       ),
-    );
-  }
+    ),
+  ));
 }
 
 // Part 2: Extracted HobbyCard Widget
