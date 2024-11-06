@@ -32,7 +32,7 @@ class SelectionButton extends StatefulWidget {
 class _SelectionButtonState extends State<SelectionButton> {
   bool isSelected = false;
 
-  void toggleSelection() {
+  void click() {
     setState(() {
       isSelected = !isSelected;
     });
@@ -51,7 +51,7 @@ class _SelectionButtonState extends State<SelectionButton> {
       width: 400,
       height: 100,
       child: ElevatedButton(
-        onPressed: toggleSelection,
+        onPressed: click,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
         ),

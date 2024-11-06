@@ -7,35 +7,28 @@ void main() => runApp(MaterialApp(
           backgroundColor: Colors.blue,
           title: const Text("Favorite cards"),
         ),
-        body: const Column(
+        body: Column(
           children: [
-            FavoriteCard(isFavorite: true),
-            FavoriteCard(isFavorite: false),
-            FavoriteCard(isFavorite: true),
+            FavoriteCard(),
+            FavoriteCard(),
+            FavoriteCard(),
           ],
         ),
       ),
     ));
 
 class FavoriteCard extends StatefulWidget {
-  final bool isFavorite;
-
-  const FavoriteCard({Key? key, required this.isFavorite}) : super(key: key);
-
   @override
   FavoriteCardState createState() => FavoriteCardState();
 }
 
 class FavoriteCardState extends State<FavoriteCard> {
-  late bool isFavorite;
+  bool isFavorite = false;
+  IconData get icon => isFavorite ? Icons.favorite : Icons.favorite_border;
+  Color get color => isFavorite ? Colors.red : Colors.grey;
 
-  @override
-  void initState() {
-    super.initState();
-    isFavorite = widget.isFavorite;
-  }
-
-  void toggleFavorite() {
+  // @override
+  void click() {
     setState(() {
       isFavorite = !isFavorite;
     });
@@ -69,11 +62,9 @@ class FavoriteCardState extends State<FavoriteCard> {
             ),
           ),
           IconButton(
-            onPressed: toggleFavorite,
-            icon: Icon(
-              Icons.favorite,
-              color: isFavorite ? Colors.red : Colors.grey,
-            ),
+            onPressed: click,
+            icon: Icon(icon),
+            color: color,
           ),
         ],
       ),
