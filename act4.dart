@@ -28,7 +28,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyButton extends StatelessWidget {
-  const MyButton(this.label, this.start, this.end, {super.key});
+  const MyButton(this.label, this.start, this.end, {
+    super.key
+  });
 
   final String label;
   final Color start;

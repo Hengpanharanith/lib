@@ -30,8 +30,8 @@ class WeatherColumn extends StatelessWidget {
         ),
         Expanded(
           child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
+            scrollDirection: Axis.vertical,
+            children: const [
               WeatherCard(
                 date: "Monday",
                 icon1: Icons.cloud,
@@ -103,9 +103,9 @@ class WeatherCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.all(5),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
+        padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
