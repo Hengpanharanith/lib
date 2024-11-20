@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:kon_khmer/W6-S1/EXERCISE-2/data/profile_data.dart';
+import 'package:kon_khmer/W6-S1/EXERCISE-2/model/profile_tile_model.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: ProfileApp(
-      profileData: ProfileData(
-        name: "Heng Panharanith",
-        position: "CS-Student",
-        avatarUrl: 'assets/ronaldo.jpg',
-        titles: [
-          TileData(
-              icon: Icons.phone,
-              title: "Phone Number",
-              data: "+855 17 398 902"),
-          TileData(icon: Icons.location_on, title: "Address", data: "Cambodia"),
-        ],
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ProfileApp(
+        profileData: nithProfile,
       ),
     ),
-  ));
+  );
 }
 
 const Color mainColor = Color(0xff5E9FCD);
@@ -67,10 +60,10 @@ class ProfileApp extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
-          ...profileData.titles.map((tile) => ProfileTile(
+          ...profileData.tiles.map((tile) => ProfileTile(
                 icon: tile.icon,
                 title: tile.title,
-                data: tile.data,
+                data: tile.value,
               )),
         ],
       ),
@@ -107,29 +100,29 @@ class ProfileTile extends StatelessWidget {
 }
 
 // Model for ProfileData
-class ProfileData {
-  final String name;
-  final String position;
-  final String? avatarUrl;
-  final List<TileData> titles;
+// class ProfileData {
+//   final String name;
+//   final String position;
+//   final String? avatarUrl;
+//   final List<TileData> titles;
 
-  const ProfileData({
-    required this.name,
-    required this.position,
-    this.avatarUrl,
-    required this.titles,
-  });
-}
+//   const ProfileData({
+//     required this.name,
+//     required this.position,
+//     this.avatarUrl,
+//     required this.titles,
+//   });
+// }
 
-// Model for TileData
-class TileData {
-  final IconData icon;
-  final String title;
-  final String data;
+// // Model for TileData
+// class TileData {
+//   final IconData icon;
+//   final String title;
+//   final String data;
 
-  const TileData({
-    required this.icon,
-    required this.title,
-    required this.data,
-  });
-}
+//   const TileData({
+//     required this.icon,
+//     required this.title,
+//     required this.data,
+//   });
+// }
