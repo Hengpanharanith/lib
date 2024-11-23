@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
-import 'quiz_app.dart';
-import 'model/quiz.dart';
+import 'quiz_app.dart'; // Adjusted path to include QuizApp
 
 void main() {
+  runApp(const MyApp());
+}
 
-  Question q1 = const Question(
-      title: "Who is the best teacher?",
-      possibleAnswers: ["ronan", "hongly", 'leangsiv'],
-      goodAnswer: 'ronan');
-  Question q2 = const Question(
-      title: "Which color is the best?",
-      possibleAnswers: ["blue", "red", 'green'],
-      goodAnswer: 'red');
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
-  List<Question> myQuestions = [q1, q2];
-  Quiz myQuiz = Quiz(title: "Crazy Quizz", questions: myQuestions);
-
-  runApp(QuizApp(myQuiz));
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Quiz',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.blue,
+      ),
+      home: const QuizApp(), // Points to your main app widget
+    );
+  }
 }
