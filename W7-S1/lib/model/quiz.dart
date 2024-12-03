@@ -22,6 +22,11 @@ class Quiz {
       options: ['Apple', 'Google', 'Microsoft', 'Facebook'],
       correctAnswer: 'Google',
     ),
+    Question(
+      text: 'Who is the best ?',
+      options: ['Ranith', 'Tech', 'Ranuth', 'aoshdoasda'],
+      correctAnswer: 'Ranith',
+    ),
   ];
 
   int _currentIndex = 0;

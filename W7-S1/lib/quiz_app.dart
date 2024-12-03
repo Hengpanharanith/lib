@@ -16,7 +16,7 @@ class QuizApp extends StatefulWidget {
 
 class _QuizAppState extends State<QuizApp> {
   QuizState _quizState = QuizState.notStarted;
-  final Quiz _quiz = Quiz(); // Mock quiz data
+  final Quiz _quiz = Quiz(); 
   final Submission _submission = Submission();
 
   void startQuiz() {

@@ -19,7 +19,7 @@ class QuestionScreen extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text(question.text, style: const TextStyle(fontSize: 18)),
+            child: Text(question.text, style: const TextStyle(fontSize: 25)),
           ),
           ...question.options.map((option) {
             return ListTile(
