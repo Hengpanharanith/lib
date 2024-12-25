@@ -54,6 +54,7 @@ class _ExpensesListState extends State<ExpensesList> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
+      
       child: ListView.builder(
         itemCount: _expenses.length,
         itemBuilder: (context, index) {
@@ -65,7 +66,9 @@ class _ExpensesListState extends State<ExpensesList> {
             child: ExpenseItem(_expenses[index]),
           );
         },
+        ?
       ),
+      
     );
   }
 }
