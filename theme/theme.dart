@@ -17,6 +17,8 @@ class BlaColors {
   
   static Color white              = Colors.white;
 
+  static var disabledText;
+
   static Color get backGroundColor { 
     return BlaColors.primary;
   }
@@ -53,6 +55,8 @@ class BlaTextStyles {
   static TextStyle label =  TextStyle(fontSize: 13, fontWeight: FontWeight.w400);
 
   static TextStyle button =  TextStyle(fontSize: 14, fontWeight: FontWeight.w500);
+
+  static var bodyMedium;
 }
 
 
