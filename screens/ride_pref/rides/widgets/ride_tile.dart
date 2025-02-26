@@ -7,13 +7,13 @@ import '../../../../utils/date_time_util.dart';
 class RideTile extends StatelessWidget {
   final Ride ride;
   final VoidCallback? onTap;
-  
+
   const RideTile({
     Key? key,
     required this.ride,
     this.onTap,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -24,7 +24,7 @@ class RideTile extends StatelessWidget {
           color: Colors.white,
           border: Border(
             bottom: BorderSide(
-              color: BlaColors.borderLight,
+              color: BlaColors.backgroundAccent,
               width: 1,
             ),
           ),
@@ -43,7 +43,7 @@ class RideTile extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                
+
                 // Price
                 Text(
                   '€${ride.pricePerSeat.toStringAsFixed(2)}',
@@ -53,9 +53,9 @@ class RideTile extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             SizedBox(height: BlaSpacings.s),
-            
+
             // Departure location
             Row(
               children: [
@@ -74,19 +74,20 @@ class RideTile extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             // Connector line
             Padding(
               padding: EdgeInsets.only(
-                left: 7.5, // Half of the icon size (16/2) - half of the line width (1/2)
+                left:
+                    7.5, // Half of the icon size (16/2) - half of the line width (1/2)
               ),
               child: Container(
                 width: 1,
                 height: 16,
-                color: BlaColors.borderNormal,
+                color: BlaColors.backgroundAccent,
               ),
             ),
-            
+
             // Arrival location and time
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -111,7 +112,7 @@ class RideTile extends StatelessWidget {
                     ],
                   ),
                 ),
-                
+
                 // Arrival time
                 Text(
                   DateTimeUtils.formatTime(ride.arrivalDateTime),
@@ -119,9 +120,9 @@ class RideTile extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             SizedBox(height: BlaSpacings.m),
-            
+
             // Driver info and seats
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -149,20 +150,20 @@ class RideTile extends StatelessWidget {
                       ),
                   ],
                 ),
-                
+
                 // Available seats
                 Row(
                   children: [
                     Icon(
                       Icons.airline_seat_recline_normal,
                       size: 16,
-                      color: BlaColors.secondaryText,
+                      color: BlaColors.backgroundAccent,
                     ),
                     SizedBox(width: BlaSpacings.s),
                     Text(
                       '${ride.remainingSeats} ${ride.remainingSeats > 1 ? "seats" : "seat"} left',
                       style: BlaTextStyles.body.copyWith(
-                        color: BlaColors.secondaryText,
+                        color: BlaColors.backgroundAccent,
                       ),
                     ),
                   ],

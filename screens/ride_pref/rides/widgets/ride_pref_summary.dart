@@ -22,7 +22,7 @@ class RidePrefSummary extends StatelessWidget {
         color: Colors.white,
         border: Border(
           bottom: BorderSide(
-            color: BlaColors.borderLight,
+            color: BlaColors.neutralLight,
             width: 1,
           ),
         ),
@@ -61,7 +61,7 @@ class RidePrefSummary extends StatelessWidget {
                   child: Container(
                     width: 1,
                     height: 8,
-                    color: BlaColors.borderNormal,
+                    color: BlaColors.neutralLight,
                   ),
                 ),
                 
@@ -92,26 +92,26 @@ class RidePrefSummary extends StatelessWidget {
                     Icon(
                       Icons.calendar_today_outlined,
                       size: 16,
-                      color: BlaColors.secondaryText,
+                      color: BlaColors.backgroundAccent,
                     ),
                     SizedBox(width: BlaSpacings.s),
                     Text(
                       DateTimeUtils.formatDateTime(preference.departureDate),
                       style: BlaTextStyles.body.copyWith(
-                        color: BlaColors.secondaryText,
+                        color: BlaColors.backgroundAccent,
                       ),
                     ),
                     SizedBox(width: BlaSpacings.m),
                     Icon(
                       Icons.person_outline,
                       size: 16,
-                      color: BlaColors.secondaryText,
+                      color: BlaColors.backgroundAccent,
                     ),
                     SizedBox(width: BlaSpacings.s),
                     Text(
                       '${preference.requestedSeats} ${preference.requestedSeats > 1 ? "passengers" : "passenger"}',
                       style: BlaTextStyles.body.copyWith(
-                        color: BlaColors.secondaryText,
+                        color: BlaColors.backgroundAccent,
                       ),
                     ),
                   ],

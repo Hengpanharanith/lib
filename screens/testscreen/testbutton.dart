@@ -17,14 +17,14 @@ class TestScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               BlaButton(
-                label: 'Content Volodia',
+                label: 'Bla 1',
                 style: BlaButtonStyle.outlined,
                 icon: const Icon(Icons.messenger_outline),
                 onPressed: () {},
               ),
               const SizedBox(height: 20),
               BlaButton(
-                label: 'Request to book',
+                label: 'Bla 2',
                 style: BlaButtonStyle.filled,
                 icon: const Icon(Icons.calendar_month_outlined),
                 onPressed: () {},

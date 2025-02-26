@@ -23,13 +23,7 @@ class BlaButton extends StatelessWidget {
   /// Optional leading icon
   final Widget? icon;
 
-  /// Creates a BlaButton with the specified properties.
-  ///
-  /// The [label] parameter is required.
-  /// By default:
-  /// - [style] is set to [BlaButtonStyle.filled]
-  /// - [onPressed] is null (disabled state)
-  /// - [icon] is null (no icon)
+
   const BlaButton({
     super.key,
     required this.label,
